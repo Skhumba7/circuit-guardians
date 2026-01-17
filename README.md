@@ -81,7 +81,7 @@ src/
 - **Card 1**: Mobile & Laptop Repairs with Book Now button
 - **Card 2**: Software & IT Support
 - **Card 3** (Large): Mobile App & Web Development
-- **Card 4**: WhatsApp quick contact link (066 277 4937)
+- **Card 4**: WhatsApp quick contact link (number)
 
 ### Portfolio
 - Filter buttons: All, Hardware Rescues, Software Launches
@@ -134,6 +134,6 @@ npm run lint
 
 ## 📞 Contact
 
-- **Phone**: 066 277 4937
-- **WhatsApp**: [Message us](https://wa.me/27662774937)
-- **Email**: support@circuitguardians.com
+- **Phone**: [number]
+- **WhatsApp**: [Message us](https://wa.me/[number])
+- **Email**: [email address]
