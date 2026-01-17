@@ -1,6 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Circuit Guardians - Tech Solutions Website
 
-## Getting Started
+A modern, high-performance website for Circuit Guardians, showcasing tech repair services, software development, and digital solutions using cutting-edge web technologies.
+
+## 🚀 Features
+
+### Implemented Components
+1. **Sticky Header Navigation** - Logo, Services dropdown, Portfolio link, and "Request a Quote" CTA
+2. **Hero Section** - 3D circuit board animation with dual CTA buttons
+3. **Tech Hub (Bento Grid)** - Service cards for repairs, software, development, and WhatsApp contact
+4. **Portfolio Gallery** - Filterable projects (Hardware Rescues & Software Launches)
+5. **3-Step Process** - Consult → Execute → Support workflow visualization
+6. **About Section** - Company story, team info, and "Why Choose Us" features
+7. **Footer** - Quick message form, full contact details, and social links
+
+### Design Highlights
+- **Bento Grid Layout** - Modern, responsive card-based design
+- **User-Journey Focused** - Clear path from discovery to action
+- **Animations** - Smooth Framer Motion transitions throughout
+- **Dark Mode Support** - Full dark/light theme support
+- **Mobile Responsive** - Perfect on all screen sizes
+- **Gradient Accents** - Blue, purple, and pink theme
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 16.1.3 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Quality**: ESLint configured
+
+## 📦 Installation & Getting Started
 
 First, run the development server:
 
@@ -10,27 +40,100 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout with metadata
+│   ├── page.tsx            # Main page (all sections)
+│   └── globals.css         # Global styles
+├── components/
+│   ├── Header.tsx          # Sticky navigation
+│   ├── Hero.tsx            # Hero with 3D circuit animation
+│   ├── TechHub.tsx         # Bento grid services
+│   ├── Portfolio.tsx       # Filterable project gallery
+│   ├── Process.tsx         # 3-step process visualization
+│   ├── About.tsx           # Company story & features
+│   └── Footer.tsx          # Contact form & links
+```
 
-## Learn More
+## 🎨 Sections
 
-To learn more about Next.js, take a look at the following resources:
+### Header
+- Sticky navigation with logo
+- Services dropdown menu
+- Portfolio link
+- Quote request button
+- Mobile hamburger menu
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Hero
+- Animated headline with gradients
+- SVG 3D circuit board animation
+- Dual CTAs: "Repair my device" & "Start a project"
+- Responsive split layout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Tech Hub (Bento Grid)
+- **Card 1**: Mobile & Laptop Repairs with Book Now button
+- **Card 2**: Software & IT Support
+- **Card 3** (Large): Mobile App & Web Development
+- **Card 4**: WhatsApp quick contact link (066 277 4937)
 
-## Deploy on Vercel
+### Portfolio
+- Filter buttons: All, Hardware Rescues, Software Launches
+- Before/After project cards with animations
+- Real project showcases
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Process
+- 3-step visual journey: Consult → Execute → Support
+- Animated connections between steps
+- Icon animations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### About
+- Company mission: "The Guardians of Your Digital World"
+- "Total Tech Care" principle
+- Why Choose Us features
+
+### Footer
+- Quick message contact form
+- Contact information
+- Social media links
+
+## 🚀 Available Scripts
+
+```bash
+# Development
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run linting
+npm run lint
+```
+
+## 📱 Features
+
+✅ Sticky Header Navigation  
+✅ 3D Circuit Board Animation  
+✅ Bento Grid Layout  
+✅ Filterable Portfolio  
+✅ Dark Mode Support  
+✅ Smooth Animations (Framer Motion)  
+✅ Mobile Responsive Design  
+✅ Contact Form  
+✅ SEO Optimized Metadata  
+✅ TypeScript Type Safety  
+
+## 📞 Contact
+
+- **Phone**: 066 277 4937
+- **WhatsApp**: [Message us](https://wa.me/27662774937)
+- **Email**: support@circuitguardians.com

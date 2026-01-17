@@ -1,0 +1,36 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield background -->
+  <path d="M 100 20 L 160 50 L 160 110 C 160 150 100 180 100 180 C 100 180 40 150 40 110 L 40 50 Z" fill="#003D82" stroke="#0066CC" stroke-width="2"/>
+  
+  <!-- Circuit board pattern -->
+  <g stroke="#0099FF" stroke-width="1.5" fill="none">
+    <!-- Top left corner -->
+    <circle cx="60" cy="50" r="2" fill="#0099FF"/>
+    <line x1="60" y1="50" x2="75" y2="50"/>
+    
+    <!-- Top right corner -->
+    <circle cx="140" cy="50" r="2" fill="#0099FF"/>
+    <line x1="140" y1="50" x2="125" y2="50"/>
+    
+    <!-- Bottom left -->
+    <circle cx="60" cy="140" r="2" fill="#0099FF"/>
+    <line x1="60" y1="140" x2="75" y2="140"/>
+    
+    <!-- Bottom right -->
+    <circle cx="140" cy="140" r="2" fill="#0099FF"/>
+    <line x1="140" y1="140" x2="125" y2="140"/>
+    
+    <!-- Vertical connectors -->
+    <line x1="75" y1="50" x2="75" y2="80"/>
+    <line x1="125" y1="50" x2="125" y2="80"/>
+    <line x1="75" y1="140" x2="75" y2="110"/>
+    <line x1="125" y1="140" x2="125" y2="110"/>
+    
+    <!-- Center nodes -->
+    <circle cx="85" cy="95" r="2" fill="#0099FF"/>
+    <circle cx="115" cy="95" r="2" fill="#0099FF"/>
+  </g>
+  
+  <!-- Lightning bolt -->
+  <path d="M 100 60 L 110 90 L 95 90 L 115 140 L 95 110 L 110 110 Z" fill="#FF4444" stroke="#FF0000" stroke-width="1"/>
+</svg>
