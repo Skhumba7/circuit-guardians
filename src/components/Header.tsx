@@ -19,10 +19,10 @@ export default function Header() {
               <Image
                 src="/logo.png"
                 alt="Circuit Guardians Logo"
-                width={80}
-                height={80}
+                width={50}
+                height={50}
                 priority
-                className="w-12 h-12"
+                className="w-16 h-16"
               />
             </a>
           </div>

@@ -62,13 +62,14 @@ export default function TechHub() {
             <p className="text-gray-700 dark:text-gray-300 mb-4 flex-grow">
               From cracked screens to hardware replacements, we fix it all with precision and care.
             </p>
-            <motion.button
+            <motion.a
               whileHover={{ x: 5 }}
+              href="#contact"
               className="mt-auto w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
             >
               Book Now
               <ArrowRight size={16} />
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           {/* Card 2: Software Installation & IT Support */}
@@ -83,13 +84,14 @@ export default function TechHub() {
             <p className="text-gray-700 dark:text-gray-300 mb-4 flex-grow">
               Professional installation and continuous technical support.
             </p>
-            <motion.button
+            <motion.a
               whileHover={{ x: 5 }}
+              href="#contact"
               className="mt-auto w-full px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors flex items-center justify-center gap-2"
             >
               Learn More
               <ArrowRight size={16} />
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           {/* Card 3: Large - Mobile App & Web Development */}
@@ -118,13 +120,14 @@ export default function TechHub() {
                 Cloud Integration & Deployment
               </div>
             </div>
-            <motion.button
+            <motion.a
               whileHover={{ x: 5 }}
+              href="#portfolio"
               className="w-full px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors flex items-center justify-center gap-2 font-semibold"
             >
               View Portfolio
               <ArrowRight size={18} />
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           {/* Card 4: WhatsApp Quick Link */}

@@ -23,8 +23,18 @@ const features = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-4 bg-gradient-to-b from-white to-gray-50 dark:from-black dark:to-gray-900">
-      <div className="max-w-7xl mx-auto">
+    <section id="about" className="py-20 px-4 bg-gradient-to-b from-white to-gray-50 dark:from-black dark:to-gray-900 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 opacity-20 dark:opacity-15"
+        style={{
+          backgroundImage: 'url("/background.jpg")',
+          backgroundRepeat: 'repeat',
+          backgroundSize: 'cover'
+        }}
+      />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Main Headline */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}

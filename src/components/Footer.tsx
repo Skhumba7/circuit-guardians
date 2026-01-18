@@ -32,7 +32,7 @@ export default function Footer() {
     <footer id="contact" className="bg-gray-900 dark:bg-black text-white pt-20 pb-10 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
           {/* Quick Message Form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
