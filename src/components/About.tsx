@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { CheckCircle2, Shield, Lightbulb, Wrench } from 'lucide-react';
+import Link from 'next/link';
 
 const features = [
   {
@@ -149,13 +150,15 @@ export default function About() {
           <p className="text-lg mb-6 opacity-90">
             Ready to transform your tech challenges into opportunities?
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-white text-blue-600 rounded-full font-bold hover:shadow-lg transition-all"
-          >
-            Get Started Today
-          </motion.button>
+          <Link href="#contact">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 bg-white text-blue-600 rounded-full font-bold hover:shadow-lg transition-all"
+            >
+              Get Started Today
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -124,7 +124,7 @@ export default function Footer() {
               <div>
                 <h4 className="font-semibold mb-1">Email</h4>
                 <a href="mailto:support@circuitguardians.com" className="text-gray-400 hover:text-blue-400 transition-colors">
-                  support@circuitguardians.com
+                  support@circuitguardians.co.za
                 </a>
               </div>
             </div>

@@ -29,23 +29,9 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <div className="relative group">
-              <button className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
-                Services
-                <ChevronDown size={16} />
-              </button>
-              <div className="absolute left-0 mt-0 w-48 bg-white dark:bg-gray-900 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <a href="#tech-hub" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 first:rounded-t-lg">
-                  Mobile & Laptop Repairs
-                </a>
-                <a href="#tech-hub" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
-                  Software Installation
-                </a>
-                <a href="#tech-hub" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 last:rounded-b-lg">
-                  App & Web Development
-                </a>
-              </div>
-            </div>
+            <a href="#tech-hub" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+              Services
+            </a>
 
             <a href="#portfolio" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
               Portfolio
@@ -96,12 +82,20 @@ export default function Header() {
                 </div>
               )}
             </div>
+            <a href="#tech-hub" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+              Portfolio
+            </a>
             <a href="#portfolio" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
               Portfolio
             </a>
-            <button className="w-full mt-2 mx-4 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-lg transition-all">
-              Request a Quote
-            </button>
+            <a href="#about" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+              Portfolio
+            </a>
+            <Link href="#contact" scroll={true}>
+              <button className="w-full mt-2 mx-4 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-lg transition-all">
+                Request a Quote
+              </button>
+            </Link>
           </div>
         )}
       </nav>

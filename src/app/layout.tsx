@@ -18,7 +18,13 @@ export const metadata: Metadata = {
   keywords: "tech repair, laptop repair, mobile repair, web development, app development, software installation",
   authors: [{ name: "Circuit Guardians" }],
   icons: {
-    icon: '/logo.png',
+    icon: [
+      { url: '/cg-favicon.ico' },
+      { url: '/logo.png', sizes: '32x32', type: 'image/png' },
+      { url: '/logo.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/cg-favicon.ico',
+    apple: '/logo.png',
   },
 };
 
