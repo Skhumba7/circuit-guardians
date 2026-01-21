@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Zap, Code } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -40,23 +41,27 @@ export default function Hero() {
           </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold flex items-center justify-center gap-2 hover:shadow-xl transition-all"
-            >
-              <Zap size={20} />
-              Repair My Device
-            </motion.button>
+            <Link href="#contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold flex items-center justify-center gap-2 hover:shadow-xl transition-all"
+              >
+                <Zap size={20} />
+                Repair My Device
+              </motion.button>
+            </Link>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-semibold flex items-center justify-center gap-2 hover:shadow-xl transition-all"
-            >
-              <Code size={20} />
-              Start a Project
-            </motion.button>
+            <Link href="#contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-semibold flex items-center justify-center gap-2 hover:shadow-xl transition-all"
+              >
+                <Code size={20} />
+                Start a Project
+              </motion.button>
+            </Link>
           </div>
         </motion.div>
       </div>
