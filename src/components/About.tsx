@@ -150,15 +150,17 @@ export default function About() {
           <p className="text-lg mb-6 opacity-90">
             Ready to transform your tech challenges into opportunities?
           </p>
-          <Link href="#contact">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-white text-blue-600 rounded-full font-bold hover:shadow-lg transition-all"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <a 
+              href="#contact" 
+              className="inline-block px-8 py-3 bg-white text-blue-600 rounded-full font-bold hover:shadow-lg transition-all"
             >
               Get Started Today
-            </motion.button>
-          </Link>
+            </a>
+          </motion.div>
         </motion.div>
       </div>
     </section>

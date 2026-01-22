@@ -2,14 +2,14 @@
 
 import { motion } from 'framer-motion';
 import { Zap, Code } from 'lucide-react';
-import Link from 'next/link';
 
 export default function Hero() {
   return (
     <section className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black pt-20 pb-10 px-4 relative overflow-hidden">
-      {/* Background Image */}
+      
+      {/* Background Image - Added z-0 to be safe */}
       <div 
-        className="absolute inset-0 opacity-20 dark:opacity-15"
+        className="absolute inset-0 z-0 opacity-20 dark:opacity-15"
         style={{
           backgroundImage: 'url("/background.jpg")',
           backgroundRepeat: 'repeat',
@@ -36,32 +36,34 @@ export default function Hero() {
             </span>
           </h1>
 
-<p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mx-auto max-w-2xl">
+          <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mx-auto max-w-2xl">
             Whether you need hardware repairs, software solutions, or a complete digital transformation, Circuit Guardians is your one-stop tech partner.
           </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="#contact">
-              <motion.button
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            
+            <a href="#contact" className="inline-block no-underline">
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold flex items-center justify-center gap-2 hover:shadow-xl transition-all"
+                className="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold hover:shadow-xl transition-all cursor-pointer"
               >
                 <Zap size={20} />
-                Repair My Device
-              </motion.button>
-            </Link>
+                <span>Repair My Device</span>
+              </motion.div>
+            </a>
 
-            <Link href="#contact">
-              <motion.button
+            <a href="#contact" className="inline-block no-underline">
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-semibold flex items-center justify-center gap-2 hover:shadow-xl transition-all"
+                className="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-semibold hover:shadow-xl transition-all cursor-pointer"
               >
                 <Code size={20} />
-                Start a Project
-              </motion.button>
-            </Link>
+                <span>Start a Project</span>
+              </motion.div>
+            </a>
+
           </div>
         </motion.div>
       </div>
