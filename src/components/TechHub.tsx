@@ -1,158 +1,184 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Smartphone, Settings, Code2, MessageCircle, ArrowRight } from 'lucide-react';
+import { Smartphone, Settings, Code2, MessageCircle, ArrowRight, CheckCircle2 } from 'lucide-react';
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
+const services = [
+  {
+    id: 'repairs',
+    title: 'Mobile & Laptop Repairs',
+    badge: 'Hardware & Diagnostics',
+    description: 'Precision troubleshooting, screen replacements, battery service, and board-level repairs for devices you rely on daily.',
+    icon: Smartphone,
+    color: 'cyan',
+    iconBg: 'bg-cyan-400/10 text-cyan-300 border-cyan-400/20',
+    ctaText: 'Book repair inspection',
+    ctaHref: 'https://wa.me/27662774937?text=Hi%20Circuit%20Guardians,%20I%20need%20help%20with%20a%20device%20repair.',
+    isExternal: true,
+    features: [
+      'Fast turnaround & diagnostic triage',
+      'Screen, battery & charging port replacement',
+      'Data safety & confidentiality first',
+    ],
   },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
+  {
+    id: 'it-support',
+    title: 'Software & IT Support',
+    badge: 'Operations & Setup',
+    description: 'Operating system installations, virus elimination, software setup, and responsive remote or on-site IT assistance for professionals and teams.',
+    icon: Settings,
+    color: 'violet',
+    iconBg: 'bg-violet-400/10 text-violet-300 border-violet-400/20',
+    ctaText: 'Discuss IT support',
+    ctaHref: 'https://wa.me/27662774937?text=Hi%20Circuit%20Guardians,%20I%20need%20IT%20support%20or%20software%20help.',
+    isExternal: true,
+    features: [
+      'OS setup, clean installs & backups',
+      'Virus, malware & bloatware cleanup',
+      'Network, printer & peripheral troubleshooting',
+    ],
   },
-};
+  {
+    id: 'development',
+    title: 'Custom Web & App Development',
+    badge: 'Digital Products',
+    description: 'Tailor-made web applications and cross-platform mobile apps engineered with Next.js and React to turn operational ideas into scalable revenue drivers.',
+    icon: Code2,
+    color: 'cyan-highlight',
+    iconBg: 'bg-gradient-to-br from-cyan-400/20 to-violet-500/20 text-cyan-300 border-cyan-300/30',
+    ctaText: 'Explore portfolio',
+    ctaHref: '#work',
+    isExternal: false,
+    featured: true,
+    features: [
+      'High-performance Next.js & React web platforms',
+      'Clean UI/UX with mobile-first responsive architecture',
+      'Payment gateways, databases & API integrations',
+    ],
+  },
+];
 
 export default function TechHub() {
   return (
-    <section id="tech-hub" className="py-20 px-4 bg-white dark:bg-black">
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="relative isolate overflow-hidden bg-slate-900/60 px-5 py-24 text-white sm:px-8 sm:py-32">
+      {/* Background glow effects */}
+      <div className="absolute top-1/2 left-0 -z-10 h-96 w-96 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
+      <div className="absolute top-1/3 right-0 -z-10 h-96 w-96 rounded-full bg-violet-600/10 blur-3xl" />
+
+      <div className="mx-auto max-w-7xl">
+        {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              The Tech Hub
-            </span>
+          <p className="inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-cyan-200 uppercase">
+            Services & Expertise
+          </p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+            Solutions built for reliability and growth.
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Your one-stop solution for all things tech
+          <p className="mt-5 text-lg leading-8 text-slate-300">
+            From emergency repairs that restore your daily workflow to custom web software that expands your business reach.
           </p>
         </motion.div>
 
+        {/* Services Grid */}
+        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`relative flex flex-col justify-between rounded-3xl border p-7 transition-all duration-300 hover:-translate-y-1 ${
+                  service.featured
+                    ? 'border-cyan-300/30 bg-gradient-to-b from-slate-900/95 to-slate-950 shadow-[0_0_35px_rgba(103,232,249,0.15)] hover:border-cyan-300/50'
+                    : 'border-white/10 bg-slate-950/80 shadow-xl backdrop-blur-sm hover:border-white/20'
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between">
+                    <div className={`grid h-14 w-14 place-items-center rounded-2xl border ${service.iconBg}`}>
+                      <Icon size={26} />
+                    </div>
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">
+                      {service.badge}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-6 text-2xl font-semibold text-white">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">
+                    {service.description}
+                  </p>
+
+                  <div className="mt-6 space-y-2.5 border-t border-white/10 pt-6">
+                    {service.features.map((feature) => (
+                      <div key={feature} className="flex items-start gap-2.5 text-xs text-slate-300 sm:text-sm">
+                        <CheckCircle2 size={16} className="shrink-0 text-cyan-300 mt-0.5" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-white/10">
+                  <a
+                    href={service.ctaHref}
+                    target={service.isExternal ? '_blank' : undefined}
+                    rel={service.isExternal ? 'noopener noreferrer' : undefined}
+                    className={`inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-semibold transition ${
+                      service.featured
+                        ? 'bg-cyan-300 text-slate-950 hover:bg-cyan-200 hover:shadow-[0_0_24px_rgba(103,232,249,0.3)]'
+                        : 'border border-white/15 bg-white/5 text-white hover:bg-white/10'
+                    }`}
+                  >
+                    <span>{service.ctaText}</span>
+                    <ArrowRight size={16} />
+                  </a>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Quick WhatsApp Support Bar */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-max"
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12 flex flex-col items-center justify-between gap-4 rounded-2xl border border-cyan-300/20 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 sm:flex-row sm:p-7"
         >
-          {/* Card 1: Mobile & Laptop Repairs */}
-          <motion.div
-            variants={itemVariants}
-            className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 p-6 rounded-2xl border border-blue-200 dark:border-blue-800 hover:shadow-lg transition-all duration-300 lg:row-span-2 flex flex-col"
-          >
-            <Smartphone size={32} className="text-blue-600 mb-4" />
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-              Mobile & Laptop Repairs
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-4 flex-grow">
-              From cracked screens to hardware replacements, we fix it all with precision and care.
-            </p>
-            <motion.a
-              whileHover={{ x: 5 }}
-              href="#contact"
-              className="mt-auto w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
-            >
-              Book Now
-              <ArrowRight size={16} />
-            </motion.a>
-          </motion.div>
-
-          {/* Card 2: Software Installation & IT Support */}
-          <motion.div
-            variants={itemVariants}
-            className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 p-6 rounded-2xl border border-purple-200 dark:border-purple-800 hover:shadow-lg transition-all duration-300 flex flex-col"
-          >
-            <Settings size={32} className="text-purple-600 mb-4" />
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-              Software & IT Support
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-4 flex-grow">
-              Professional installation and continuous technical support.
-            </p>
-            <motion.a
-              whileHover={{ x: 5 }}
-              href="#contact"
-              className="mt-auto w-full px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors flex items-center justify-center gap-2"
-            >
-              Learn More
-              <ArrowRight size={16} />
-            </motion.a>
-          </motion.div>
-
-          {/* Card 3: Large - Mobile App & Web Development */}
-          <motion.div
-            variants={itemVariants}
-            className="bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-950 dark:to-pink-900 p-8 rounded-2xl border border-pink-200 dark:border-pink-800 hover:shadow-lg transition-all duration-300 md:col-span-2 lg:col-span-2 lg:row-span-2 flex flex-col"
-          >
-            <Code2 size={40} className="text-pink-600 mb-4" />
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
-              Mobile App & Web Development
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-6 flex-grow">
-              Custom-built solutions tailored to your business needs. From concept to launch, we bring your digital vision to life.
-            </p>
-            <div className="space-y-3 mb-6">
-              <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-                <div className="w-2 h-2 bg-pink-600 rounded-full" />
-                React & Next.js Web Applications
-              </div>
-              <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-                <div className="w-2 h-2 bg-pink-600 rounded-full" />
-                Native & Cross-Platform Mobile Apps
-              </div>
-              <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-                <div className="w-2 h-2 bg-pink-600 rounded-full" />
-                Cloud Integration & Deployment
-              </div>
+          <div className="flex items-center gap-4 text-center sm:text-left">
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-emerald-400/10 text-emerald-300 border border-emerald-400/20">
+              <MessageCircle size={24} />
+            </span>
+            <div>
+              <h4 className="text-base font-semibold text-white">
+                Not sure what kind of fix or build you need?
+              </h4>
+              <p className="text-xs text-slate-400 sm:text-sm">
+                Chat directly with our tech team on WhatsApp. Plain language, quick answers, no obligations.
+              </p>
             </div>
-            <motion.a
-              whileHover={{ x: 5 }}
-              href="#portfolio"
-              className="w-full px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors flex items-center justify-center gap-2 font-semibold"
-            >
-              View Portfolio
-              <ArrowRight size={18} />
-            </motion.a>
-          </motion.div>
-
-          {/* Card 4: WhatsApp Quick Link */}
-          <motion.div
-            variants={itemVariants}
-            className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 p-6 rounded-2xl border border-green-200 dark:border-green-800 hover:shadow-lg transition-all duration-300 flex flex-col justify-center items-center text-center"
+          </div>
+          <a
+            href="https://wa.me/27662774937"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]"
           >
-            <MessageCircle size={40} className="text-green-600 mb-4" />
-            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-              Quick Support
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-4 text-sm">
-              Message us directly on WhatsApp
-            </p>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="https://wa.me/27662774937"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-semibold"
-            >
-              066 277 4937
-            </motion.a>
-          </motion.div>
+            <MessageCircle size={17} />
+            <span>Chat on WhatsApp (066 277 4937)</span>
+          </a>
         </motion.div>
       </div>
     </section>

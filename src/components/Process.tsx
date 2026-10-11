@@ -1,145 +1,122 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MessageSquare, Zap, HeartHandshake, ChevronRight } from 'lucide-react';
+import { MessageSquareText, Cpu, CheckCircle, ArrowRight } from 'lucide-react';
 
 const steps = [
   {
-    number: 1,
-    title: 'Consult',
-    description: 'We listen to your needs and understand your goals.',
-    icon: MessageSquare,
-    color: 'from-blue-500 to-blue-600',
-    bgColor: 'from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900',
+    step: '01',
+    title: 'Consult & Triage',
+    subtitle: 'Free Initial Assessment',
+    description: 'We listen to what is going wrong with your device, or review your development goals. Clear diagnosis in plain terms with zero pressure.',
+    deliverable: 'Upfront diagnosis & honest quote',
+    icon: MessageSquareText,
+    accent: 'text-cyan-300 border-cyan-400/25 bg-cyan-400/10',
   },
   {
-    number: 2,
-    title: 'Execute',
-    description: 'Our experts deliver solutions with precision and care.',
-    icon: Zap,
-    color: 'from-purple-500 to-purple-600',
-    bgColor: 'from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900',
+    step: '02',
+    title: 'Precision Execution',
+    subtitle: 'Hardware & Code Craftsmanship',
+    description: 'Our technicians repair your hardware with quality parts, or our developers build and test your digital product with clean Next.js architecture.',
+    deliverable: 'Rigorous testing & data integrity',
+    icon: Cpu,
+    accent: 'text-violet-300 border-violet-400/25 bg-violet-400/10',
   },
   {
-    number: 3,
-    title: 'Support',
-    description: 'We stand by our work with continuous support.',
-    icon: HeartHandshake,
-    color: 'from-pink-500 to-pink-600',
-    bgColor: 'from-pink-50 to-pink-100 dark:from-pink-950 dark:to-pink-900',
+    step: '03',
+    title: 'Handoff & Ongoing Support',
+    subtitle: 'Guaranteed Reliability',
+    description: 'We return your restored device or launch your application, backing our work with ongoing responsiveness whenever you need a Guardian.',
+    deliverable: 'Workmanship warranty & support access',
+    icon: CheckCircle,
+    accent: 'text-emerald-300 border-emerald-400/25 bg-emerald-400/10',
   },
 ];
 
 export default function Process() {
   return (
-    <section className="py-20 px-4 bg-white dark:bg-black">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative isolate overflow-hidden bg-slate-900/80 px-5 py-24 text-white sm:px-8 sm:py-32">
+      {/* Background glow */}
+      <div className="absolute top-1/2 left-1/2 -z-10 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
+
+      <div className="mx-auto max-w-7xl">
+        {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Our Process
-            </span>
+          <p className="inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-cyan-200 uppercase">
+            How It Works
+          </p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+            A transparent path from problem to solution.
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
-            Three simple steps to your solution
+          <p className="mt-5 text-lg leading-8 text-slate-300">
+            No jargon, no hidden fees, and no guessing. Three clear steps so you always know what comes next.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 relative">
-          {/* Connection Line */}
-          <svg
-            className="absolute top-20 left-0 right-0 w-full h-12 hidden md:block"
-            viewBox="0 0 1000 100"
-            preserveAspectRatio="none"
-          >
-            <motion.path
-              d="M 50 50 Q 500 50 950 50"
-              stroke="url(#gradient)"
-              strokeWidth="3"
-              fill="none"
-              strokeLinecap="round"
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-            />
-            <defs>
-              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#3b82f6" />
-                <stop offset="50%" stopColor="#a855f7" />
-                <stop offset="100%" stopColor="#ec4899" />
-              </linearGradient>
-            </defs>
-          </svg>
-
-          {/* Steps */}
-          {steps.map((step, index) => {
-            const Icon = step.icon;
+        {/* Process Steps Grid */}
+        <div className="mt-16 grid gap-8 md:grid-cols-3">
+          {steps.map((item, index) => {
+            const Icon = item.icon;
             return (
               <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 30 }}
+                key={item.step}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="relative"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                className="relative flex flex-col justify-between rounded-3xl border border-white/10 bg-slate-950/80 p-8 shadow-xl backdrop-blur-md transition-all duration-300 hover:border-cyan-300/30"
               >
-                {/* Step Container */}
-                <div className={`bg-gradient-to-br ${step.bgColor} p-8 rounded-2xl border border-gray-200 dark:border-gray-800 text-center h-full`}>
-                  {/* Circle Number */}
-                  <motion.div
-                    className={`w-16 h-16 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center text-white text-3xl font-bold mx-auto mb-4 shadow-lg`}
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                  >
-                    {step.number}
-                  </motion.div>
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-bold tracking-widest text-cyan-300">
+                      PHASE {item.step}
+                    </span>
+                    <span className={`grid h-12 w-12 place-items-center rounded-2xl border ${item.accent}`}>
+                      <Icon size={22} />
+                    </span>
+                  </div>
 
-                  {/* Icon */}
-                  <motion.div
-                    className="flex justify-center mb-4"
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    <Icon size={32} className={`bg-gradient-to-r ${step.color} bg-clip-text text-transparent`} />
-                  </motion.div>
-
-                  {/* Content */}
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    {step.title}
+                  <span className="mt-6 block text-xs font-semibold uppercase tracking-wider text-slate-400">
+                    {item.subtitle}
+                  </span>
+                  <h3 className="mt-1 text-2xl font-semibold text-white">
+                    {item.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {step.description}
+                  <p className="mt-4 text-sm leading-6 text-slate-300">
+                    {item.description}
                   </p>
+                </div>
 
-                  {/* Arrow for Desktop */}
-                  {index < steps.length - 1 && (
-                    <motion.div
-                      className="hidden md:flex absolute -right-6 top-1/2 transform -translate-y-1/2 z-10"
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      <ChevronRight size={24} className="text-purple-600 dark:text-purple-400" />
-                    </motion.div>
-                  )}
-
-                  {/* Arrow for Mobile */}
-                  {index < steps.length - 1 && (
-                    <motion.div
-                      className="md:hidden flex justify-center mt-4"
-                      animate={{ y: [0, 3, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      <ChevronRight size={24} className="text-purple-600 dark:text-purple-400 rotate-90" />
-                    </motion.div>
-                  )}
+                <div className="mt-8 border-t border-white/10 pt-5">
+                  <span className="block text-xs font-medium uppercase tracking-wider text-cyan-300">
+                    GUARANTEE
+                  </span>
+                  <span className="mt-1 block text-sm font-semibold text-white">
+                    {item.deliverable}
+                  </span>
                 </div>
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Action Trigger Banner */}
+        <div className="mt-14 text-center">
+          <a
+            href="https://wa.me/27662774937?text=Hi%20Circuit%20Guardians,%20I'd%20like%20to%20start%20with%20a%20free%20consultation."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 rounded-xl bg-cyan-300 px-7 py-4 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200 hover:shadow-[0_0_24px_rgba(103,232,249,0.35)]"
+          >
+            <span>Start Step 1: Tell us your problem</span>
+            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+          </a>
         </div>
       </div>
     </section>

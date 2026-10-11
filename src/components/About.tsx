@@ -1,166 +1,194 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CheckCircle2, Shield, Lightbulb, Wrench } from 'lucide-react';
-import Link from 'next/link';
+import { CheckCircle2, Shield, Wrench, Code2, HeartHandshake, ArrowRight } from 'lucide-react';
 
-const features = [
+const corePillars = [
   {
     icon: Wrench,
-    title: 'Hardware Expertise',
-    description: 'We breathe new life into computers, laptops, and cell phones, ensuring your daily tools stay operational.',
+    title: 'Hardware Precision',
+    description: 'From shattered screens to motherboard logic-board faults, we repair laptops, cell phones, and workstations with precision tools and tested components.',
+    metric: 'Hardware & Components',
   },
   {
-    icon: Lightbulb,
-    title: 'Software Innovation',
-    description: 'Beyond installation, we also build the software. Whether it\'s a bespoke website or a high-performance application, we turn your vision into a digital reality.',
+    icon: Code2,
+    title: 'Software & Digital Products',
+    description: 'We build modern web applications and mobile apps with Next.js, React, and robust cloud APIs—translating business logic into fast, secure products.',
+    metric: 'Full-Stack Development',
   },
   {
     icon: Shield,
-    title: 'Reliability First',
-    description: 'Our name is our promise. We guard your data, your devices, and your digital presence with industry-leading standards.',
+    title: 'Data Privacy & Uptime',
+    description: 'We treat every customer’s device, personal photos, business databases, and source code with strict confidentiality and professional diligence.',
+    metric: 'Security-First Culture',
   },
+];
+
+const credentials = [
+  'Skilled technicians with hands-on repair diagnostics',
+  'Experienced developers building production-grade web systems',
+  'Prompt communication with transparent, quote-first pricing',
+  'South African local support ready via WhatsApp and call',
 ];
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-4 bg-gradient-to-b from-white to-gray-50 dark:from-black dark:to-gray-900 relative overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 opacity-20 dark:opacity-15"
-        style={{
-          backgroundImage: 'url("/background.jpg")',
-          backgroundRepeat: 'repeat',
-          backgroundSize: 'cover'
-        }}
-      />
-      
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Main Headline */}
+    <section id="about" className="relative isolate overflow-hidden bg-slate-950 px-5 py-24 text-white sm:px-8 sm:py-32">
+      {/* Visual background accents */}
+      <div className="hero-grid absolute inset-0 -z-10 opacity-25" />
+      <div className="absolute top-1/3 left-0 -z-10 h-96 w-96 rounded-full bg-cyan-400/10 blur-3xl" />
+      <div className="absolute bottom-0 right-0 -z-10 h-96 w-96 rounded-full bg-violet-600/15 blur-3xl" />
+
+      <div className="mx-auto max-w-7xl">
+        {/* Main Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              The Guardians of Your Digital World
-            </span>
+          <p className="inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-cyan-200 uppercase">
+            About Circuit Guardians
+          </p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+            The Guardians of your digital world.
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            At Circuit Guardians, we believe that technology should be a tool for progress, not a source of frustration. 
-            Based on the principle of "Total Tech Care," we have bridged the gap between physical hardware reliability and 
-            cutting-edge software innovation.
+          <p className="mt-5 text-lg leading-8 text-slate-300">
+            We bridge the gap between physical hardware reliability and custom digital software development under one roof.
           </p>
         </motion.div>
 
-        {/* Who We Are */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="grid md:grid-cols-2 gap-12 mb-16 items-center"
-        >
-          <div className="space-y-6">
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-white">
-              Who We Are
-            </h3>
-            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              We are a team of technicians, developers, and problem-solvers. Whether it's a shattered smartphone screen 
-              that holds your precious memories or a complex business idea that needs a custom digital solution to thrive, 
-              we treat every circuit and every line of code with the same level of precision.
-            </p>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <CheckCircle2 size={20} className="text-green-500 flex-shrink-0" />
-                <span>Expert team with years of industry experience</span>
-              </li>
-              <li className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <CheckCircle2 size={20} className="text-green-500 flex-shrink-0" />
-                <span>Passion for solving complex technical challenges</span>
-              </li>
-              <li className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <CheckCircle2 size={20} className="text-green-500 flex-shrink-0" />
-                <span>Commitment to customer satisfaction</span>
-              </li>
-            </ul>
-          </div>
-
+        {/* Story & Value Proposition Grid */}
+        <div className="mt-16 grid items-center gap-12 lg:grid-cols-2">
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-950 dark:to-purple-950 p-8 rounded-2xl border border-gray-200 dark:border-gray-800"
+            className="space-y-6"
           >
-            <div className="text-6xl mb-4">🛡️</div>
-            <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Total Tech Care
-            </h4>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              From the motherboard to the user interface, we are your one-stop tech partners dedicated to your success.
+            <h3 className="text-3xl font-semibold text-white">
+              Why people and businesses depend on us.
+            </h3>
+            <p className="text-base leading-7 text-slate-300">
+              Technology should enable your daily life and accelerate your business—not generate friction and downtime. Circuit Guardians was established on the principle of <strong className="text-white">&ldquo;Total Tech Care&rdquo;</strong>: whether you need a broken phone screen replaced before an important meeting or an enterprise-grade web application to scale your operations, our team delivers with equal accountability.
             </p>
+            <p className="text-base leading-7 text-slate-300">
+              We talk to you in plain language, inspect issues thoroughly, and provide transparent quotes before turning a screw or writing a line of code.
+            </p>
+
+            <div className="space-y-3 pt-2">
+              {credentials.map((item) => (
+                <div key={item} className="flex items-center gap-3 text-sm text-slate-200">
+                  <CheckCircle2 size={18} className="shrink-0 text-cyan-300" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
           </motion.div>
-        </motion.div>
 
-        {/* Why Choose Us - Features */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-        >
-          <h3 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">
-            Why Choose the Guardians?
-          </h3>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white dark:bg-gray-800 p-8 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300"
-                >
-                  <Icon size={40} className="text-blue-600 mb-4" />
-                  <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    {feature.title}
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.div>
-
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="bg-gradient-to-r from-blue-600 to-purple-600 p-12 rounded-2xl text-center text-white"
-        >
-          <h3 className="text-3xl font-bold mb-4">
-            Circuit Guardians: Your Tech Heroes
-          </h3>
-          <p className="text-lg mb-6 opacity-90">
-            Ready to transform your tech challenges into opportunities?
-          </p>
+          {/* Right Hero-style Guardian Assurance Card */}
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative rounded-3xl border border-white/15 bg-slate-900/80 p-8 shadow-2xl backdrop-blur-md sm:p-10"
           >
-            <a 
-              href="#contact" 
-              className="inline-block px-8 py-3 bg-white text-blue-600 rounded-full font-bold hover:shadow-lg transition-all"
-            >
-              Get Started Today
-            </a>
+            <div className="flex items-center justify-between border-b border-white/10 pb-6">
+              <div className="flex items-center gap-3">
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-cyan-300/10 text-cyan-300 border border-cyan-300/20">
+                  <HeartHandshake size={24} />
+                </span>
+                <div>
+                  <h4 className="text-lg font-semibold text-white">Our Service Promise</h4>
+                  <p className="text-xs text-slate-400">Total Tech Care Standard</p>
+                </div>
+              </div>
+              <span className="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-300">
+                100% Committed
+              </span>
+            </div>
+
+            <div className="mt-6 space-y-4 text-sm leading-6 text-slate-300">
+              <div className="rounded-2xl border border-white/5 bg-slate-950/60 p-4">
+                <h5 className="font-semibold text-white">No Hidden Costs</h5>
+                <p className="mt-1 text-xs text-slate-400">
+                  Clear itemized estimates prior to any hardware repair or software project commencement.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/5 bg-slate-950/60 p-4">
+                <h5 className="font-semibold text-white">Confidentiality Assured</h5>
+                <p className="mt-1 text-xs text-slate-400">
+                  Strict internal protocols ensuring your personal data and business documents remain private.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/5 bg-slate-950/60 p-4">
+                <h5 className="font-semibold text-white">Rapid Communication</h5>
+                <p className="mt-1 text-xs text-slate-400">
+                  Direct communication channels so you speak to the person actually handling your tech.
+                </p>
+              </div>
+            </div>
           </motion.div>
+        </div>
+
+        {/* Pillars Grid */}
+        <div className="mt-20 grid gap-8 md:grid-cols-3">
+          {corePillars.map((pillar, index) => {
+            const Icon = pillar.icon;
+            return (
+              <motion.div
+                key={pillar.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                className="rounded-3xl border border-white/10 bg-slate-900/60 p-8 shadow-xl backdrop-blur-sm transition hover:border-cyan-300/30"
+              >
+                <div className="grid h-14 w-14 place-items-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
+                  <Icon size={26} />
+                </div>
+                <span className="mt-6 block text-xs font-semibold uppercase tracking-wider text-slate-400">
+                  {pillar.metric}
+                </span>
+                <h4 className="mt-1 text-2xl font-semibold text-white">
+                  {pillar.title}
+                </h4>
+                <p className="mt-3 text-sm leading-6 text-slate-300">
+                  {pillar.description}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Final CTA Strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16 flex flex-col items-center justify-between gap-6 rounded-3xl border border-cyan-300/30 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 p-8 sm:flex-row sm:p-10"
+        >
+          <div>
+            <h3 className="text-2xl font-semibold text-white">
+              Ready to work with your Tech Heroes?
+            </h3>
+            <p className="mt-1 text-sm text-slate-400">
+              Get in touch today for fast device repairs or custom web and app development.
+            </p>
+          </div>
+          <a
+            href="https://wa.me/27662774937"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-cyan-300 px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200 hover:shadow-[0_0_24px_rgba(103,232,249,0.3)]"
+          >
+            <span>Message on WhatsApp</span>
+            <ArrowRight size={17} />
+          </a>
         </motion.div>
       </div>
     </section>
